@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Talk Day</title>
+    <style>
+        
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+        color: #343a40;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        text-align: center;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        color: #007bff;
+    }
+    .search-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #search-bar {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+        border-radius: 20px;
+        font-size: 1rem;
+        transition: box-shadow 0.2s;
+    }
+    #search-bar:focus {
+        outline: none;
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+    .schedule-slot {
+        display: flex;
+        border: 1px solid #e9ecef;
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+    .schedule-slot.hidden {
+        display: none;
+    }
+    .time {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        text-align: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    .talk-details {
+        padding: 20px;
+        flex-grow: 1;
+    }
+    .talk-details h3 {
+        margin-top: 0;
+        color: #0056b3;
+    }
+    .speakers {
+        font-style: italic;
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+    .categories span {
+        display: inline-block;
+        background-color: #e9ecef;
+        color: #495057;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+    .schedule-slot.break {
+        background-color: #f1f3f5;
+    }
+    .schedule-slot.break .time {
+        background-color: #6c757d;
+    }
+    .schedule-slot.break .talk-details h3 {
+        color: #495057;
+        text-align: center;
+        width: 100%;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tech Talk Day</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search by category (e.g., AI, Cloud)...">
+        </div>
+
+        <div id="schedule-container">
+            
+                <div class="schedule-slot" data-categories="ai,machine learning,future tech">
+                    <div class="time">10:00 AM - 11:00 AM</div>
+                    <div class="talk-details">
+                        <h3>The Future of AI</h3>
+                        <p class="speakers"><strong>By:</strong> Jane Doe</p>
+                        <p>A deep dive into the future of AI and its impact on society.</p>
+                        <div class="categories">
+                            <span>AI</span><span>Machine Learning</span><span>Future Tech</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot break">
+                    <div class="time">11:00 AM - 11:10 AM</div>
+                    <div class="talk-details">
+                        <h3>Transition</h3>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot" data-categories="javascript,web development,frameworks">
+                    <div class="time">11:10 AM - 12:10 PM</div>
+                    <div class="talk-details">
+                        <h3>Modern JavaScript Frameworks</h3>
+                        <p class="speakers"><strong>By:</strong> John Smith</p>
+                        <p>An overview of the most popular JavaScript frameworks in 2026.</p>
+                        <div class="categories">
+                            <span>JavaScript</span><span>Web Development</span><span>Frameworks</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot break">
+                    <div class="time">12:10 PM - 12:20 PM</div>
+                    <div class="talk-details">
+                        <h3>Transition</h3>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot" data-categories="cloud,devops,kubernetes">
+                    <div class="time">12:20 PM - 1:20 PM</div>
+                    <div class="talk-details">
+                        <h3>The Cloud Native Revolution</h3>
+                        <p class="speakers"><strong>By:</strong> Peter Jones</p>
+                        <p>How cloud-native technologies are changing the way we build and deploy software.</p>
+                        <div class="categories">
+                            <span>Cloud</span><span>DevOps</span><span>Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot break">
+                    <div class="time">1:20 PM - 2:20 PM</div>
+                    <div class="talk-details">
+                        <h3>Lunch Break</h3>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot" data-categories="cybersecurity,quantum computing,cryptography">
+                    <div class="time">2:20 PM - 3:20 PM</div>
+                    <div class="talk-details">
+                        <h3>Cybersecurity in a Post-Quantum World</h3>
+                        <p class="speakers"><strong>By:</strong> Mary Johnson</p>
+                        <p>Exploring the challenges and solutions for cybersecurity in the age of quantum computers.</p>
+                        <div class="categories">
+                            <span>Cybersecurity</span><span>Quantum Computing</span><span>Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot break">
+                    <div class="time">3:20 PM - 3:30 PM</div>
+                    <div class="talk-details">
+                        <h3>Transition</h3>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot" data-categories="system design,architecture,scalability">
+                    <div class="time">3:30 PM - 4:30 PM</div>
+                    <div class="talk-details">
+                        <h3>Building Scalable and Resilient Systems</h3>
+                        <p class="speakers"><strong>By:</strong> David Williams, Susan Brown</p>
+                        <p>Best practices for designing and building systems that can handle millions of users.</p>
+                        <div class="categories">
+                            <span>System Design</span><span>Architecture</span><span>Scalability</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot break">
+                    <div class="time">4:30 PM - 4:40 PM</div>
+                    <div class="talk-details">
+                        <h3>Transition</h3>
+                    </div>
+                </div>
+            
+                <div class="schedule-slot" data-categories="ai,ethics,society">
+                    <div class="time">4:40 PM - 5:40 PM</div>
+                    <div class="talk-details">
+                        <h3>The Ethics of AI</h3>
+                        <p class="speakers"><strong>By:</strong> Michael Miller</p>
+                        <p>A discussion on the ethical implications of artificial intelligence and how we can ensure it is used for good.</p>
+                        <div class="categories">
+                            <span>AI</span><span>Ethics</span><span>Society</span>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <script>
+        
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchBar = document.getElementById('search-bar');
+        const scheduleSlots = document.querySelectorAll('.schedule-slot');
+
+        searchBar.addEventListener('keyup', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            scheduleSlots.forEach(slot => {
+                const isBreak = slot.classList.contains('break');
+                if (isBreak) return;
+
+                const categories = slot.dataset.categories;
+                if (categories.includes(searchTerm)) {
+                    slot.classList.remove('hidden');
+                } else {
+                    slot.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    </script>
+</body>
+</html>

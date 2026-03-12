@@ -1,0 +1,12 @@
+{
+  "name": "tech-talk-day",
+  "version": "1.0.0",
+  "description": "A single-page website for a tech talk event.",
+  "main": "generate.js",
+  "scripts": {
+    "start": "node generate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
